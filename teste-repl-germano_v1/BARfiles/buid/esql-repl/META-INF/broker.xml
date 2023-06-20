@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><Broker>
+<CompiledApplication>
+<ConfigurableProperty uri="startMode"/>
+</CompiledApplication>
+<CompiledMessageFlow name="main_msgflow">
+<ConfigurableProperty uri="main_msgflow#additionalInstances"/>
+<ConfigurableProperty uri="main_msgflow#notificationThresholdMsgsPerSec"/>
+<ConfigurableProperty uri="main_msgflow#maximumRateMsgsPerSec"/>
+<ConfigurableProperty uri="main_msgflow#processingTimeoutSec"/>
+<ConfigurableProperty uri="main_msgflow#processingTimeoutAction"/>
+<ConfigurableProperty uri="main_msgflow#wlmPolicy"/>
+<ConfigurableProperty uri="main_msgflow#commitCount"/>
+<ConfigurableProperty uri="main_msgflow#commitInterval"/>
+<ConfigurableProperty uri="main_msgflow#coordinatedTransaction"/>
+<ConfigurableProperty uri="main_msgflow#consumerPolicySet"/>
+<ConfigurableProperty uri="main_msgflow#providerPolicySet"/>
+<ConfigurableProperty uri="main_msgflow#consumerPolicySetBindings"/>
+<ConfigurableProperty uri="main_msgflow#providerPolicySetBindings"/>
+<ConfigurableProperty uri="main_msgflow#securityProfileName"/>
+<ConfigurableProperty uri="main_msgflow#monitoringProfile"/>
+<ConfigurableProperty uri="main_msgflow#startMode"/>
+<ConfigurableProperty uri="main_msgflow#startInstancesWhenFlowStarts"/>
+<ConfigurableProperty override="/esql-repl" uri="main_msgflow#HTTP Input.URLSpecifier"/>
+<ConfigurableProperty uri="main_msgflow#HTTP Input.useHTTPS"/>
+<ConfigurableProperty uri="main_msgflow#HTTP Input.decompressInputMessage"/>
+<ConfigurableProperty override="10" uri="main_msgflow#HTTP Input.timeoutForClient"/>
+<ConfigurableProperty override="JSON" uri="main_msgflow#HTTP Input.faultFormat"/>
+<ConfigurableProperty uri="main_msgflow#HTTP Input.validateMaster"/>
+<ConfigurableProperty uri="main_msgflow#HTTP Input.securityProfileName"/>
+<ConfigurableProperty uri="main_msgflow#Compute.dataSource"/>
+<ConfigurableProperty uri="main_msgflow#Compute.connectDatasourceBeforeFlowStarts"/>
+<ConfigurableProperty uri="main_msgflow#Compute.validateMaster"/>
+<ConfigurableProperty uri="main_msgflow#HTTP Reply.validateMaster"/>
+</CompiledMessageFlow>
+</Broker>

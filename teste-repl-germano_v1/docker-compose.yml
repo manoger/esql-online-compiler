@@ -1,0 +1,12 @@
+version: '3'
+services:
+  aceserver:
+    image: ibmcom/ace:latest
+    container_name: aceserver
+    ports:
+      - 7600:7600
+      - 7800:7800
+      - 7843:7843
+    environment:
+      - LICENSE=accept
+      - ACE_SERVER_NAME=ACESERVER

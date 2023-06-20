@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" includeDepFromLibs="false">
+  <options name="uteSyncKey" value="20230619_0723_39"/>
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1687213134482" workspaceResource="/esql-repl/.project">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file esql-repl.&#xA;Application file esql-repl.appzip successfully added to the BAR.&#xA;Application compiled contents:&#xA;    &#xA;    Processing file esql-repl\main_msgflow.msgflow.&#xA;    Successfully added file esql-repl\main_msgflow.msgflow to BAR file.&#xA;    &#xA;    &#xA;    Processing file esql-repl\application.descriptor.&#xA;    Successfully added file esql-repl\application.descriptor to BAR file.&#xA;    Elapsed time: 0 second(s).&#xA;    &#xA;    Successfully added file esql-repl\application.descriptor to BAR file.&#xA;    &#xA;    &#xA;    Processing file esql-repl\main_msgflow_Compute.esql.&#xA;    Successfully added file esql-repl\main_msgflow_Compute.esql to BAR file.&#xA;    &#xA;&#xA;Elapsed time: 0,034 second(s).&#xA;" severity="0"/>
+      <barEntry name="esql-repl.appzip"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>

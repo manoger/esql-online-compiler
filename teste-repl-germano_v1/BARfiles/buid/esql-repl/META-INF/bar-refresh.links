@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy:Deploy xmlns:deploy="http://www.ibm.com/xmlns/prod/wmb/deploy/6.0.0" overrideConfigurableProperties="true" includeESQL="false">
+  <deployables>
+    <deployable deployed="true" barResourceTimeStamp="1687213134628" workspaceResource="/esql-repl/application.descriptor">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file esql-repl\application.descriptor.&#xA;Successfully added file esql-repl\application.descriptor to BAR file.&#xA;Elapsed time: 0 second(s).&#xA;&#xA;Successfully added file esql-repl\application.descriptor to BAR file.&#xA;" severity="0"/>
+      <barEntry name="application.descriptor"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1687213367499" workspaceResource="/esql-repl/main_msgflow.msgflow">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file esql-repl\main_msgflow.msgflow.&#xA;Successfully added file esql-repl\main_msgflow.msgflow to BAR file.&#xA;" severity="0"/>
+      <barEntry name="main_msgflow.msgflow"/>
+    </deployable>
+    <deployable deployed="true" barResourceTimeStamp="1687213256335" workspaceResource="/esql-repl/main_msgflow_Compute.esql">
+      <deployableStatus code="0" key="DEPLOYABLE_LAST_COMPILE_STATUS" message="&#xA;Processing file esql-repl\main_msgflow_Compute.esql.&#xA;Successfully added file esql-repl\main_msgflow_Compute.esql to BAR file.&#xA;" severity="0"/>
+      <barEntry name="main_msgflow_Compute.esql"/>
+    </deployable>
+  </deployables>
+</deploy:Deploy>
