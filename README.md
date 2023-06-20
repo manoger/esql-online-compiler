@@ -11,7 +11,7 @@ O projeto é composto de:
    * porta administrativa 7600
    * porta de execução http 7800
 * Site
-   * conecta com o websocket para compilar o código ESQL e faz chamadas XHR na localhost:7600 para
+   * conecta com o websocket para compilar o código ESQL e faz chamadas XHR na localhost:7600 para computar a entrada e saída de payload
 
 Para executar o projeto:
 * Clone este repositório (https://github.com/manoger/esql-online-compiler)
@@ -19,8 +19,10 @@ Para executar o projeto:
 * Suba o websocket `node .\websocket-docker.js`
 * Acesse o site index.html
 
-Aparencia atual 
+Aparencia atual:
+
 ![image](https://github.com/manoger/esql-online-compiler/assets/29717626/88a60477-d5ab-4408-a64c-3039f5bd206e)
 
-Aparencia atual sem `styles.css`
+Aparencia atual sem `styles.css`:
+
 ![image](https://github.com/manoger/esql-online-compiler/assets/29717626/22bc9272-4688-442f-bd62-aa794802b37a)
