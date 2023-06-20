@@ -14,10 +14,12 @@ O projeto é composto de:
    * conecta com o websocket para compilar o código ESQL e faz chamadas XHR na localhost:7600 para computar a entrada e saída de payload
 
 Para executar o projeto:
-* Clone este repositório (https://github.com/manoger/esql-online-compiler)
-* Baixe as depencias node via `npm i`
-* Suba o websocket `node .\websocket-docker.js`
-* Acesse o site index.html
+1. Clone este repositório (https://github.com/manoger/esql-online-compiler)
+2. Baixe as depencias node via `npm i`
+3. Suba o websocket `node .\websocket-docker.js`
+  * Necessário ter docker e docker-compose instalado.
+4. Acesse o site index.html
+  * É possivel testar sem subir o websocket 
 
 Aparencia atual:
 
