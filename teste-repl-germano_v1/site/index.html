@@ -96,10 +96,12 @@
                 renderResponseLog(JSON.parse(result));
             };
             socket.onclose = function (event) {
+                document.getElementById('response-log').innerHTML = "💻💤 O servidor provalvelmente esta desligado";
                 console.log("Conexão fechada com código: " + event.code);
                 document.getElementById("connectbtn").style.display = "flex";
             };
             socket.onerror = function (error) {
+                document.getElementById('response-log').innerHTML = "💻🔥 A conexão do servidor caiu";
                 console.error("Erro na conexão: " + error);
                 document.getElementById("connectbtn").style.display = "flex";
             };
