@@ -1,0 +1,46 @@
+/* Estilos de Layout */
+.horizontal-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.vertical-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.centered-spaced-items{
+    justify-content: space-around;
+    overflow-x: visible;
+    flex-wrap: nowrap;
+}
+.stylized-box {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.stylized-card {
+    background-color: #f2f2f2;
+    padding: 20px;   
+}
+.stylized-card .image-container {
+    width: 100px;
+    height: 100px;
+    background-color: #f30000;
+    margin-right: 20px;
+}
+.stylized-card .feedback {
+    resize: horizontal;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 80px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100vh;
+    resize: vertical;
+    padding: 5px;
+}

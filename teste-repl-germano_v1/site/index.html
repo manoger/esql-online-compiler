@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/theme/darcula.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/theme/ayu-mirage.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="compile-log.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/sql/sql.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/javascript/javascript.min.js"></script>
@@ -19,11 +23,26 @@
 </head>
 
 <body>
-    <div class="neobrutalism-box">
-        <div class="vertical-items">
-            ESQL
-            <textarea id="sqlTextArea">
-    CREATE COMPUTE MODULE main_msgflow_Compute
+    
+    
+    <div class="stylized-box">
+        <section class="horizontal-items">
+            <div class="stylized-card horizontal-items">
+                <div id="anime-character" class="image-container"></div>
+                <textarea id="dialog-box" class="feedback">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </textarea>
+            </div>
+        </section>
+        <section class="horizontal-items">
+            <section class="vertical-items">
+                <h1>ENTRADA JSON</h1>
+                <textarea id="inputJsonTextArea" class="json">{"key": "valueX"}</textarea>
+            </section>
+            <section class="vertical-items">
+                <h1>ESQL</h1>
+                <textarea id="sqlTextArea">
+CREATE COMPUTE MODULE main_msgflow_Compute
     CREATE FUNCTION Main() RETURNS BOOLEAN
     BEGIN
         CALL CopyEntireMessage();
@@ -33,23 +52,25 @@
     CREATE PROCEDURE CopyEntireMessage() BEGIN
         SET OutputRoot = InputRoot;
     END;
-    END MODULE;
+END MODULE;
                 </textarea>
-            Conexão
-            <div id="response-log" class="neobrutalism-box"></div>
-        </div>
-        <div class="vertical-items">
-            ENTRADA JSON
-            <textarea id="inputJsonTextArea" class="json">{"key": "valueX"}</textarea>
-            SAIDA JSON <div id="httpStatusCode">Status code: ___</div>
-            <textarea id="outputJsonTextArea" class="json" disabled>{"key": "valueY"}</textarea>
-        </div>
-        <div class="neobrutalism-box centered-spaced-items">
-            <button id="connectbtn" class="bn5" onclick="openWebSocket()">Conectar Servidor</button>
-            <button class="bn5" onclick="compileESQl()">Compilar ESQL</button>
-            <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
-        </div>
-        <div class="image-container"></div>
+                <section class="stylized-box centered-spaced-items">
+                    <button id="connectbtn" class="bn5" onclick="openWebSocket()">Conectar Servidor</button>
+                    <button class="bn5" onclick="compileESQl()">Compilar ESQL</button>
+                    <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
+                </section>
+                <h2>Conexão</h2>
+                <div id="compile-log" class="stylized-box">
+                    <div class="compile-log success-compile-log"> Clique no botão "Compilar"</div>
+                    <div class="compile-log error-compile-log"> Mas certifique-se de ter subido o servidor 😉 </div>
+                </div>
+            </section>
+            <section class="vertical-items">
+                <h1>SAIDA JSON</h1>
+                <textarea id="outputJsonTextArea" class="json" disabled>{"key": "valueY"}</textarea>
+                <div id="httpStatusCode">Status code: ___</div>
+            </section>
+        </section>
     </div>
 
     <script>
@@ -63,6 +84,8 @@
             autoCloseBrackets: true,
             extraKeys: { "Ctrl-Space": "autocomplete" }
         });
+        //esqlTextArea.setSize("100vw","100vh");
+        esqlTextArea.setSize("40vw",'50vh');
         var inputJsonTextArea = CodeMirror.fromTextArea(
             document.getElementById("inputJsonTextArea"), {
             mode: "application/json",
@@ -72,6 +95,7 @@
             autoCloseBrackets: true,
             extraKeys: { "Ctrl-Space": "autocomplete" }
         });
+        inputJsonTextArea.setSize("25vw","50vh");
         var outputJsonTextArea = CodeMirror.fromTextArea(
             document.getElementById("outputJsonTextArea"), {
             mode: "application/json",
@@ -81,6 +105,7 @@
             autoCloseBrackets: true,
             disabled: true,
         });
+        outputJsonTextArea.setSize("25vw","50vh");
         ////////////////////////////////////////////////////////////////////////////////////
         var socket; // Variável global para o objeto WebSocket
         function openWebSocket() {
@@ -96,12 +121,12 @@
                 renderResponseLog(JSON.parse(result));
             };
             socket.onclose = function (event) {
-                document.getElementById('response-log').innerHTML = "💻💤 O servidor provalvelmente esta desligado";
+                document.getElementById('compile-log').innerHTML = "💻💤 O servidor provalvelmente esta desligado";
                 console.log("Conexão fechada com código: " + event.code);
                 document.getElementById("connectbtn").style.display = "flex";
             };
             socket.onerror = function (error) {
-                document.getElementById('response-log').innerHTML = "💻🔥 A conexão do servidor caiu";
+                document.getElementById('compile-log').innerHTML = "💻🔥 A conexão do servidor caiu";
                 console.error("Erro na conexão: " + error);
                 document.getElementById("connectbtn").style.display = "flex";
             };
@@ -110,7 +135,7 @@
             var esqlCode = esqlTextArea.getValue();
             console.log("😉📤Enviando ESQL", esqlCode)
             socket.send(esqlCode);
-            const responseLogDiv = document.getElementById('response-log');
+            const responseLogDiv = document.getElementById('compile-log');
             responseLogDiv.innerHTML = "Compilando ESQL: ...";
         }
         function enviarJSON() {
@@ -137,12 +162,12 @@
         }
         ////////////////////////////////////////////////////////////////////////////////////
         function renderResponseLog(response) {
-            const responseLogDiv = document.getElementById('response-log');
+            const responseLogDiv = document.getElementById('compile-log');
             responseLogDiv.innerHTML = '';
             response.LogEntry.forEach(logEntry => {
                 const logEntryDiv = document.createElement('div');
-                logEntryDiv.className = 'log-entry';
-                logEntryDiv.classList.add(logEntry.message.severityCode === 'E' ? 'error-log-entry' : 'success-log-entry');
+                logEntryDiv.className = 'compile-log';
+                logEntryDiv.classList.add(logEntry.message.severityCode === 'E' ? 'error-compile-log' : 'success-compile-log');
 
                 const messageDiv = document.createElement('div');
                 messageDiv.className = 'message';

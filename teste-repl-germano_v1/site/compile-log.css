@@ -1,0 +1,33 @@
+#compile-log {
+    max-height: 150px;
+    overflow-y: scroll;
+
+    .compile-log {
+        margin-bottom: 5px;
+        padding: 10px;
+        transition: border-color 0.3s;
+        &.error-compile-log {
+            border-color: #ff0000;
+            border-width: 1px 1px 1px 10px;
+            border-top-style: dashed;
+            border-right-style: dotted;
+            border-bottom-style: dashed;
+            border-left-style: solid;
+        }
+        &.success-compile-log {
+            border-color: #57f52f;
+            border-width: 1px 1px 1px 10px;
+            border-top-style: dashed;
+            border-right-style: dotted;
+            border-bottom-style: dashed;
+            border-left-style: solid;
+        }
+        .message {
+            font-weight: bold;
+        }
+        .text,
+        .detailed-text {
+            margin-top: 5px;
+        }
+    }
+}
