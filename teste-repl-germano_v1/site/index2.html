@@ -1,0 +1,1054 @@
+<html class="dark sl-theme-dark" lang="en">
+
+<head>
+    <link rel="stylesheet" media="screen" href="https://www.codewars.com/packs/assets/components.59307fce.css"
+        data-turbolinks-track="reload">
+    <link rel="stylesheet" media="screen" href="https://www.codewars.com/packs/assets/application.f3fc2fd4.css"
+        data-turbolinks-track="reload">
+    <link rel="stylesheet" media="screen" href="https://www.codewars.com/packs/assets/application.a76fe50b.css"
+        defer="defer" data-turbolinks-track="reload">
+    <meta charset="utf-8">
+    <title>Training on Name Shuffler | Codewars</title>
+</head>
+
+<body class="play_view  full-viewport  logged-in no-footer" id="code_challenges">
+    <div id="app">
+        <h1 class="page-title">Kata Training</h1>
+        <div class="w-full" id="shell">
+            <div class="sidenav-nubbin block md:hidden"><i class="icon-moon-list "></i></div>
+            <nav id="sidenav">
+                <ul class="top md:mb-10">
+                    <li class="sidenav-item"><a class="inline-flex pb-2" href="/dashboard">
+                            <div class="logo mt-3 shrink-0"><img class="w-full h-full"
+                                    src="https://www.codewars.com/packs/assets/logo.61192cf7.svg"></div>
+                            <div class="sidenav-link__content mt-2">
+                                <div class="sidenav-link__label">Home</div>
+                                <div class="sidenav-link__desc">Report home for your next assignment</div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-section"><span>Training</span></li>
+                    <li class="sidenav-item mt-1"><a href="/kata/latest/my-languages?beta=false">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M23.477 7.694c-.395-.559-1.312-.795-1.869-.318L20.342 8.46c-3.71-1.833-7.42-3.663-11.129-5.497-1.651-.817-2.512 1.944-.884 2.748l4.011 1.98-2.83 5.437c-.019.039-.032.08-.05.12L2.053 9.843c-1.66-.762-2.537 1.931-.899 2.685l8.863 4.074.5 2.442a272 272 0 0 1-3.176-1.45c-1.643-.767-3.08 1.672-1.428 2.443 2.031.948 4.082 1.852 6.123 2.776 1.268.572 2.405-.733 2.115-1.708v-.02c-.353-1.726-.708-3.452-1.06-5.179.076-.093.152-.19.21-.3l3.08-5.918 3.405 1.68c.384.191.723.183 1.001.055.172-.036.337-.11.478-.23.631-.54 1.26-1.081 1.893-1.62.555-.477.767-1.242.32-1.879z">
+                                    </path>
+                                    <path
+                                        d="M16.482 5.579a2.303 2.303 0 1 0 1.145-4.462l-.016-.003a2.303 2.303 0 0 0-1.145 4.461l.016.004z">
+                                    </path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Practice</div>
+                                <div class="sidenav-link__desc">Complete challenging <strong>Kata</strong> to earn honor
+                                    and ranks. Re-train to hone technique</div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-item"><a href="/kumite">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="m9.441 10.67-2.908 1.233-1.06-2.317 1.848-.05c.543 0 .986-.418 1.06-.96l.296-2.416C8.751 5.568 8.332 5 7.74 4.927a1.106 1.106 0 0 0-1.232.961l-.197 1.48-1.627.049a.786.786 0 0 0-.345.074l-2.268.813a.997.997 0 0 0-.64.616 1.02 1.02 0 0 0 .048.888l2.317 4.659-1.109 6.779c-.123.69.37 1.356 1.06 1.479.074 0 .148.025.222.025a1.27 1.27 0 0 0 1.257-1.085l1.134-6.902 6.113-2.589-2.193-.936a2.199 2.199 0 0 1-.838-.567zM4.574 4.136a2.243 2.243 0 1 1-4.07 1.887 2.243 2.243 0 0 1 4.07-1.887Z">
+                                    </path>
+                                    <path
+                                        d="m21.94 6.727-2.268-.814a.87.87 0 0 0-.345-.074l-1.652-.05-.197-1.478c-.074-.592-.641-1.011-1.233-.962a1.11 1.11 0 0 0-.961 1.233l.296 2.415c.073.543.517.937 1.06.962l1.848.05-1.06 2.317-5.768-2.441c-.666-.271-1.405.025-1.676.69-.271.666.024 1.405.69 1.676l6.952 2.959 1.134 6.902a1.27 1.27 0 0 0 1.257 1.085c.074 0 .148 0 .222-.025.69-.123 1.183-.789 1.06-1.48l-1.11-6.778 2.317-4.66c.148-.27.148-.616.05-.887a.946.946 0 0 0-.617-.64zm.465-5.268a2.243 2.243 0 1 1-1.888 4.07 2.243 2.243 0 0 1 1.888-4.07z">
+                                    </path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Freestyle Sparring</div>
+                                <div class="sidenav-link__desc">Take turns remixing and refactoring others code through
+                                    <strong>Kumite</strong></div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-section"><span>Career</span></li>
+                    <li class="sidenav-item mt-1"><a href="https://jobs.qualified.io" rel="noopener" target="_blank"
+                            title="Qualified Jobs">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Opportunities</div>
+                                <div class="sidenav-link__desc">Find your next career challenge – powered by
+                                    <strong>Qualified Jobs</strong></div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-section"><span>Community</span></li>
+                    <li class="sidenav-item mt-1"><a href="/users/leaderboard" title="Leaders">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2.5"></path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Leaderboards</div>
+                                <div class="sidenav-link__desc">Achieve honor and move up the global leaderboards</div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-item"><a href="https://discord.gg/mSwJWRvkHA" rel="noopener" target="_blank"
+                            title="Discord">
+                            <div class="sidenav-link__icon sidenav__discord-icon"><svg
+                                    class="ml-1.5 w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9.8147 10.0948c-.6792 0-1.2191.5921-1.2191 1.315 0 .7227.5486 1.3236 1.2191 1.3236.6793 0 1.2192-.6008 1.2192-1.3237.0174-.7228-.54-1.315-1.2192-1.315zm4.3715 0c-.6792 0-1.2191.5921-1.2191 1.315 0 .7227.5486 1.3236 1.2191 1.3236.6793 0 1.2192-.6008 1.2192-1.3237 0-.7228-.54-1.315-1.2192-1.315z">
+                                    </path>
+                                    <path
+                                        d="M20.0034.0539H3.9889C2.64.0637 1.5506 1.1594 1.5506 2.5096v.0092-.0004 16.1629c0 1.3533 1.0945 2.4508 2.4465 2.4558H17.539l-.627-2.212 1.524 1.4195 1.4455 1.3411 2.569 2.2642V2.5096c0-1.3532-1.0945-2.4508-2.4466-2.4557ZM15.388 15.6595l-.7838-.9667c.889-.2145 1.636-.7207 2.1527-1.4097l.007-.0097c-.4877.3222-.958.5486-1.376.6966-.9578.4145-2.0733.6556-3.2451.6556a8.4005 8.4005 0 0 1-1.6323-.1593l.0531.0088c-.9878-.2002-1.8648-.5165-2.6764-.9407l.0552.0263-.1132-.061-.0435-.0348c-.2177-.122-.3396-.209-.3396-.209s.5747.958 2.09 1.4108c-.3484.4528-.7925.9928-.7925.9928-2.6386-.0871-3.6488-1.8201-3.6488-1.8201 0-3.8404 1.7242-6.9668 1.7242-6.9668 1.7156-1.2801 3.3527-1.2453 3.3527-1.2453l.122.148c-2.151.6183-3.135 1.5676-3.135 1.5676s.2612-.148.6966-.3484c.7886-.3714 1.7038-.6386 2.6657-.7534l.0426-.0042.209-.0174c.3922-.056.8452-.088 1.3056-.088 1.7258 0 3.3467.449 4.7522 1.2367l-.0491-.0253s-.9493-.9057-2.9783-1.5414l.1742-.1916s1.6285-.0348 3.3527 1.2628c0 0 1.7155 3.1176 1.7155 6.9667 0 0-1.0101 1.7243-3.6574 1.8114z">
+                                    </path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Chat</div>
+                                <div class="sidenav-link__desc">Join our <strong>Discord</strong> server and chat with
+                                    your fellow code warriors</div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-item"><a href="https://github.com/codewars/codewars.com/discussions"
+                            rel="noopener" target="_blank" title="GitHub Discussions">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Discussions</div>
+                                <div class="sidenav-link__desc">View our <strong>Github Discussions</strong> board to
+                                    discuss general Codewars topics</div>
+                            </div>
+                        </a></li>
+                    <li class="sidenav-section"><span>About</span></li>
+                    <li class="sidenav-item mt-1"><a href="https://docs.codewars.com" rel="noopener" target="_blank"
+                            title="The Codewars Docs">
+                            <div class="sidenav-link__icon"><svg class="ml-1.5 w-6 h-6 inline-block" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+                                </svg></div>
+                            <div class="sidenav-link__content">
+                                <div class="sidenav-link__label">Docs</div>
+                                <div class="sidenav-link__desc">Learn about all of the different aspects of Codewars
+                                </div>
+                            </div>
+                        </a></li>
+                </ul>
+            </nav>
+            <header class="main is-visible" id="main_header">
+                <ul class="items">
+                    <li class="item-list"><a class="js-toggle-dark-mode w-6"><svg class="block dark:hidden"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path clip-rule="evenodd"
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    fill-rule="evenodd"></path>
+                            </svg><svg class="hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                            </svg></a></li>
+                    <li class="item-list stars-item has-menu static"><a><i class="icon-moon-bookmark text-2xl"></i></a>
+                        <div class="menu has-auto-scrolling right-0 shadow-lg">
+                            <div class="menu-body" style="max-height: 691.6px;">
+                                <ul class="space-y">
+                                    <li><a>
+                                            <div>You have not starred any kata</div>
+                                            <div>To add some, just click the<span class="is-link ml-5px"><i
+                                                        class="icon-moon-star-empty is-small"></i></span>next to any
+                                                kata title.</div>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="notifications-item has-menu static" id="notifications_drawer"><a><i
+                                class="icon-moon-bell text-2xl"></i></a>
+                        <div class="menu right-0 shadow-lg">
+                            <div class="menu-body" style="max-height: 691.6px;">
+                                <ul>
+                                    <li><a>You do not have any notifications</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="profile-item min-w-60px sm:min-w-130px has-menu mr-0 text-sm"><a href="/users/manoger"
+                            id="header_profile_link">
+                            <div class="profile-pic mr-0"><img title="" alt="manoger Avatar"
+                                    src="https://avatars.githubusercontent.com/u/29717626?s=100"></div>
+                            <div class="profile-points hidden sm:block ml-4">
+                                <div class="small-hex is-extra-wide is-invertable is-white-rank">
+                                    <div class="inner-small-hex is-extra-wide "><span>7 kyu</span></div>
+                                </div>
+                                <div class="ml-10px is-inline" data-rt="633dc0cb7845f2004f6e0c4f:honor">65</div>
+                            </div>
+                        </a>
+                        <div class="menu shadow-lg">
+                            <div class="menu-body" style="max-height: 691.6px;">
+                                <ul>
+                                    <li><a href="/users/manoger"><i class="icon-moon-user "></i>View Profile</a></li>
+                                    <li class="border-t"><a href="/users/edit"><i
+                                                class="icon-moon-settings "></i>Account Settings</a></li>
+                                    <li><a href="/trainer/setup"><i class="icon-moon-settings "></i>Training Setup</a>
+                                    </li>
+                                    <li class="border-t"><a data-turbolinks="false" href="/subscription"><i
+                                                class="icon-moon-red-badge is-red-text"></i>Upgrade to Red</a></li>
+                                    <li class="border-t"><a class="js-sign-out"><i class="icon-moon-power "></i>Sign
+                                            out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+            <main id="shell_content" role="main">
+                <div class="is-hidden" id="global_alerts">
+                    <div class="alert-box"></div>
+                </div>
+                <div id="flash"></div>
+                <div id="cc_play_view">
+                    <!--v-if-->
+                    <div class="w-full game-title">
+                        <div class="panel p-0 mb-0">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="w-full md:w-5/12">
+                                    <div class="flex items-center">
+                                        <div class="small-hex is-extra-wide is-white-rank">
+                                            <div class="inner-small-hex is-extra-wide "><span>8 kyu</span></div>
+                                        </div>
+                                        <h4 class="ml-2 mb-3">Name Shuffler</h4>
+                                        <!--v-if-->
+                                    </div>
+                                    <div class="mt-1 mb-3 space-x-4" data-id="559ac78160f0be07c200005a"><span><a
+                                                class="mr-0 js-remove-code-challenge-star is-hidden"
+                                                data-tippy-content="Total times this kata has been bookmarked. Click to remove your bookmark"
+                                                data-tippy-placement="bottom"><i
+                                                    class="icon-moon-star text-sm opacity-75"
+                                                    rt="559ac78160f0be07c200005a:total_stars"></i><span
+                                                    data-rt="559ac78160f0be07c200005a:total_stars">221</span></a><a
+                                                class="mr-0 js-add-code-challenge-star"
+                                                data-tippy-content="Total times this kata has been bookmarked. Click to bookmark"
+                                                data-tippy-placement="bottom"><i
+                                                    class="icon-moon-star-empty text-sm opacity-75"
+                                                    rt="559ac78160f0be07c200005a:total_stars"></i><span
+                                                    data-rt="559ac78160f0be07c200005a:total_stars">221</span></a></span><a
+                                            class="mr-0 js-add-to-collection ml-2"
+                                            data-challenge="{&quot;id&quot;:&quot;559ac78160f0be07c200005a&quot;,&quot;name&quot;:&quot;Name Shuffler&quot;}"
+                                            data-tippy-content="Total collections this kata is a part of. Click to view and add collections."
+                                            data-tippy-placement="bottom"><i
+                                                class="icon-moon-collection text-sm opacity-75"
+                                                rt="559ac78160f0be07c200005a:total_collections"></i><span
+                                                data-rt="559ac78160f0be07c200005a:total_collections">81</span></a><span
+                                            class="mr-0 text-ui-text-lc"
+                                            data-tippy-content="Satisfaction Rating: 93% of users gave a positive rating out of 3191 votes. Ranked kata must be completed before they can be voted on."
+                                            data-tippy-placement="bottom"><i
+                                                class="icon-moon-guage text-xs opacity-75 top-0"></i><span
+                                                class="mr-0">93% <span class="opacity-75">of</span>
+                                                3,191</span></span><span class="mr-0 text-ui-text-lc"
+                                            data-tippy-content="Total times Lua has been completed out of all kata completions"
+                                            data-tippy-placement="bottom"><i
+                                                class="icon-moon-bullseye text-sm opacity-75"></i><span>100 <span
+                                                    class="opacity-75">of</span> 31,494</span></span><a class="mr-0"
+                                            data-tippy-content="This kata's Sensei" data-tippy-placement="bottom"
+                                            href="/users/debri"><i
+                                                class="icon-moon-user text-sm opacity-75"></i>debri</a></div>
+                                </div>
+                                <div class="w-full md:w-7/12 pt-4 md:pl-4">
+                                    <ul class="is-inline float-left">
+                                        <li>
+                                            <div class="language-selector">
+                                                <div class="dropdown has-border is-scrolled is-big shadow-sm"
+                                                    id="language_dd">
+                                                    <i class="icon-moon-chevron-sign-down"></i>
+                                                    <span class="mr-4">
+                                                        <i class="icon-moon-lua"></i>
+                                                        <span>Lua</span>
+                                                        <div class="placeholder">Language</div>
+                                                    </span>
+                                                    <dl>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/bf"
+                                                            data-value="bf">
+                                                            <i class="icon-moon-bf "></i>
+                                                            BF (Beta)
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/c"
+                                                            data-value="c">
+                                                            <i class="icon-moon-c-lang "></i>
+                                                            C
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/cobol"
+                                                            data-value="cobol">
+                                                            <i class="icon-moon-cobol "></i>
+                                                            COBOL (Beta)
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/coffeescript"
+                                                            data-value="coffeescript">
+                                                            <i class="icon-moon-coffeescript "></i>
+                                                            CoffeeScript
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/csharp"
+                                                            data-value="csharp">
+                                                            <i class="icon-moon-csharp "></i>
+                                                            C#
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/d"
+                                                            data-value="d">
+                                                            <i class="icon-moon-d "></i>
+                                                            D (Beta)
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/elixir"
+                                                            data-value="elixir">
+                                                            <i class="icon-moon-elixir "></i>
+                                                            Elixir
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/javascript"
+                                                            data-value="javascript">
+                                                            <i class="icon-moon-javascript "></i>
+                                                            JavaScript
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/lua"
+                                                            data-value="lua">
+                                                            <i class="icon-moon-lua "></i>
+                                                            Lua
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/python"
+                                                            data-value="python">
+                                                            <i class="icon-moon-python "></i>
+                                                            Python
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/riscv"
+                                                            data-value="riscv">
+                                                            <i class="icon-moon-riscv "></i>
+                                                            RISC-V (Beta)
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/ruby"
+                                                            data-value="ruby">
+                                                            <i class="icon-moon-ruby "></i>
+                                                            Ruby
+                                                        </dd>
+                                                        <dd data-href="/kata/559ac78160f0be07c200005a/train/rust"
+                                                            data-value="rust">
+                                                            <i class="icon-moon-rust "></i>
+                                                            Rust
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="mr-0">
+                                            <div class="dropdown has-border is-big shadow-sm"
+                                                data-tippy-content="Select the language version you wish to use."
+                                                data-tippy-placement="top" id="language_version">
+                                                <i class="icon-moon-chevron-sign-down"></i>
+                                                <span>5.3</span>
+                                                <div class="placeholder">Language Version</div>
+                                                <dl>
+                                                    <dd data-tippy-placement="right" class="is-active"
+                                                        data-version="5.3">
+                                                        <span>5.3</span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="is-inline float-right ide-options">
+                                        <li class="mr-0 mode-options">
+                                            <ul class="icon-list is-text">
+                                                <li class="mr-0" id="vim_mode">
+                                                    <a>
+                                                        <div class="icon-container">VIM</div>
+                                                    </a>
+                                                </li>
+                                                <li class="mr-0" id="emacs_mode">
+                                                    <a>
+                                                        <div class="icon-container">EMACS</div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="mr-0 hidden md:block">
+                                            <ul class="icon-list">
+                                                <li class="mr-0" id="maximize_layout">
+                                                    <a title="Maximize editor space">
+                                                        <div class="icon-container"><i class="icon-moon-expand "></i>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:flex md:flex-row min-h-[250px] h-auto md:h-[calc(100vh-155px)]" id="play">
+                        <div class="w-full md:w-5/12 max-h-[75vh] md:max-h-screen h-auto md:h-full pr-0 overflow-auto md:overflow-visible"
+                            id="description_area">
+                            <div class="h-full">
+                                <div class="mb-2 border-0 overflow-hidden flex items-center justify-start">
+                                    <div>
+                                        <a data-tippy-content="Tip: You can press Cmd + I to toggle between Instructions and Output tabs."
+                                            data-tippy-placement="bottom"
+                                            class="inline-block px-4 py-2 rounded-lg bg-ui-active-tab-bg text-ui-active-tab-text">
+                                            Instructions
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a class="inline-block px-4 py-2 rounded-lg">
+                                            Output
+                                        </a>
+                                    </div>
+                                    <!--v-if-->
+                                    <div class="float-right pr-2.5 pt-1.5">
+                                        <a class="is-hidden" id="minimize_layout">
+                                            <i class="icon-moon-collapse text-2xl"></i>
+                                            <span>Restore</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-0 mb-0 min-h-[200px] h-auto md:h-[calc(100vh-195px)] overflow-auto bg-ui-section rounded-lg">
+                                    <div class="md:h-full" style="">
+                                        <div class="description h-full">
+                                            <div class="description-content p-4">
+                                                <div class="markdown prose max-w-none mb-8" id="description">
+                                                    <p>Write a function that returns a string in which firstname is
+                                                        swapped with last name.</p>
+                                                    <p><strong>Example(Input --&gt; Output)</strong></p>
+                                                    <pre><code>"john McClane" --&gt; "McClane john"
+  </code></pre>
+                                                </div>
+                                                <hr>
+                                                <div class="mt-4"><span><i class="icon-moon-tag "></i></span>
+                                                    <div class="keyword-tag">Strings</div>
+                                                    <div class="keyword-tag">Fundamentals</div>
+                                                </div>
+                                            </div>
+                                            <div class="description-footer flex flex-row">
+                                                <div class="grow bg-contrast-n-100 dark:bg-contrast-100">
+                                                    <div id="partner-display"><!--v-if--><!--v-if-->
+                                                        <div class="cw-ad cw-ad--image"><a
+                                                                rel="nofollow noopener external" target="_blank"
+                                                                href="/ads/carbon_srv?path=/ads/click/x/GTND42JYCAAIC2JNFTS4YKQNFTADTK3ECW7ILZ3JCYAD5K7YCT7ICK3KC6BDL53MCABICK3NC6SI627NCYSI6KQUHEYIK53UF67D4KJECTNCYBZ52K&amp;ad=490027&amp;placement=train_ad"><img
+                                                                    alt="Ad" class="cw-ad__img"
+                                                                    src="https://cdn4.buysellads.net/uu/1/134955/1685040254-deisgndotdev3.jpg">
+                                                                <div class="cw-ad__text"><!--v-if-->
+                                                                    <div class="cw-ad__copy"><span>Design and
+                                                                            Development tips in your inbox. Every
+                                                                            weekday.</span><!--v-if--></div>
+                                                                </div>
+                                                            </a><a class="cw-ad__callout" target="carbon"
+                                                                href="https://discover.buysellads.com/carbon?utm_source=codewars-com-carbon&amp;utm_medium=ad_via_link&amp;utm_campaign=in_unit&amp;utm_term=custom">Ads
+                                                                via Carbon</a></div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="max-w-[130px] text-center hidden lg:flex flow-row justify-center bg-contrast-n-200 dark:bg-contrast-200">
+                                                    <a class="hover:text-current p-2 pb-4"
+                                                        data-tippy-content="The code engine that powers Codewars is the same used by Qualified.io, a platform built for educators and technical recruiters looking to train and hire the best software engineers."
+                                                        data-tippy-placement="top"
+                                                        href="https://www.qualified.io?utm_source=codewars&amp;utm_medium=web"
+                                                        target="_blank" rel="noopener">
+                                                        <span class="pl-1 text-xs inline-block">powered by</span>
+                                                        <img class="h-4 inline-block dark:hidden pl-1"
+                                                            src="https://www.codewars.com/packs/assets/qualified-black.b052752a.svg">
+                                                        <img class="h-4 hidden dark:inline-block pl-1"
+                                                            src="https://www.codewars.com/packs/assets/qualified-white.7cba1bde.svg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md:h-full overflow-hidden" style="display: none;">
+                                        <div class="console-output h-full p-0">
+                                            <div class="h-full" id="code_results">
+                                                <div class="alert-box no-border is-square mb-0 h-full">
+                                                    <div class="message"><i class="icon-moon-info "></i>Your output will
+                                                        be shown here</div>
+                                                    <iframe id="runner_frame"
+                                                        data-src="https://cr.codewars.com?api=v2&amp;utm_campaign=kata_trainer&amp;utm_medium=web&amp;utm_source=codewars#congrats=true&amp;pro=false&amp;theme=dark"
+                                                        sandbox="allow-scripts allow-same-origin allow-pointer-lock"
+                                                        class="rounded-lg"
+                                                        src="https://cr.codewars.com?api=v2&amp;utm_campaign=kata_trainer&amp;utm_medium=web&amp;utm_source=codewars#congrats=true&amp;pro=false&amp;theme=dark"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md:h-full overflow-auto" style="display: none;">
+                                        <div class="h-full mb-4 p-4">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-7/12 pt-4 md:pt-0 md:pl-4 min-h-[500px] h-[75vh] md:h-full"
+                            id="editors_area">
+                            <div class="ide-editors" id="editors">
+                                <div class="pb-5" id="code_container">
+                                    <div class="bg-ui-section p-2 rounded-t-lg p-2">
+                                        <div class="text-sm font-bold">Compute Node - ESQL code</div>
+                                    </div>
+                                    <div class="code-editor-wrapper h-full pb-5">
+                                        <div id="code" class="text-editor-container">
+                                            <div class="text-editor js-editor has-shadow" style="height: 253.513px;">
+                                                <div class="CodeMirror cm-s-codewars" translate="no"
+                                                    style="clip-path: inset(0px);">
+                                                    <div
+                                                        style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 44px;">
+                                                        <textarea autocorrect="off" autocapitalize="off"
+                                                            spellcheck="false" tabindex="0"
+                                                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea>
+                                                    </div>
+                                                    <div class="CodeMirror-vscrollbar" tabindex="-1"
+                                                        cm-not-content="true">
+                                                        <div style="min-width: 1px; height: 0px;"></div>
+                                                    </div>
+                                                    <div class="CodeMirror-hscrollbar" tabindex="-1"
+                                                        cm-not-content="true">
+                                                        <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                                                    </div>
+                                                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true">
+                                                    </div>
+                                                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                                                    <div class="CodeMirror-scroll" tabindex="-1">
+                                                        <div class="CodeMirror-sizer"
+                                                            style="margin-left: 40px; margin-bottom: -10px; border-right-width: 40px; min-height: 96px; min-width: 207.2px; padding-right: 0px; padding-bottom: 0px;">
+                                                            <div style="position: relative; top: 0px;">
+                                                                <div class="CodeMirror-lines" role="presentation">
+                                                                    <div role="presentation"
+                                                                        style="position: relative; outline: none;">
+                                                                        <div class="CodeMirror-measure">
+                                                                            <pre
+                                                                                class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre>
+                                                                        </div>
+                                                                        <div class="CodeMirror-measure"></div>
+                                                                        <div style="position: relative; z-index: 1;">
+                                                                        </div>
+                                                                        <div class="CodeMirror-cursors" style="">
+                                                                            <div class="CodeMirror-cursor"
+                                                                                style="left: 4px; top: 0px; height: 17.5px;">
+                                                                                &nbsp;</div>
+                                                                        </div>
+                                                                        <div class="CodeMirror-code" role="presentation"
+                                                                            style="">
+                                                                            <div class="CodeMirror-activeline"
+                                                                                style="position: relative;">
+                                                                                <div
+                                                                                    class="CodeMirror-activeline-background CodeMirror-linebackground">
+                                                                                </div>
+                                                                                <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter"
+                                                                                    style="left: -40px; width: 40px;">
+                                                                                </div>
+                                                                                <div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        1</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">function</span> <span class="cm-variable">nameShuffler</span>(<span class="cm-variable">str</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        2</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-comment">-- Your code here :)</span></span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        3</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">end</span></span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        4</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        5</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">return</span> <span class="cm-variable">nameShuffler</span></span></pre>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            style="position: absolute; height: 40px; width: 1px; border-bottom: 0px solid transparent; top: 96px;">
+                                                        </div>
+                                                        <div class="CodeMirror-gutters"
+                                                            style="height: 136px; left: 0px;">
+                                                            <div class="CodeMirror-gutter CodeMirror-linenumbers"
+                                                                style="width: 29px;"></div>
+                                                            <div class="CodeMirror-gutter CodeMirror-foldgutter"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="editor-msg-container is-hidden">
+                                                    <div class="alert-box"></div>
+                                                </div>
+                                            </div>
+                                            <div class="commands-container">
+                                                <ul class="is-unstyled">
+                                                    <li class="expand" title="Maximize Editor (esc key)"><a><i
+                                                                class="icon-moon-expand "></i></a></li>
+                                                    <li class="shrink is-hidden" title="Shrink Editor (esc key)"><a><i
+                                                                class="icon-moon-collapse "></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-5 mt-4" id="fixture_container">
+                                    <div class="bg-ui-section p-2 rounded-t-lg p-2">
+                                        <div class="text-sm font-bold">Sample Tests</div>
+                                    </div>
+                                    <div class="code-editor-wrapper h-full pb-5">
+                                        <div id="fixture" class="text-editor-container">
+                                            <div class="text-editor js-editor has-shadow" style="height: 155.675px;">
+                                                <div class="CodeMirror cm-s-codewars" translate="no"
+                                                    style="clip-path: inset(0px);">
+                                                    <div
+                                                        style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 44px;">
+                                                        <textarea autocorrect="off" autocapitalize="off"
+                                                            spellcheck="false" tabindex="0"
+                                                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea>
+                                                    </div>
+                                                    <div class="CodeMirror-vscrollbar" tabindex="-1"
+                                                        cm-not-content="true" style="display: block; bottom: 10px;">
+                                                        <div style="min-width: 1px; height: 463px;"></div>
+                                                    </div>
+                                                    <div class="CodeMirror-hscrollbar" tabindex="-1"
+                                                        cm-not-content="true"
+                                                        style="display: block; right: 10px; left: 40px;">
+                                                        <div style="height: 100%; min-height: 1px; width: 754px;"></div>
+                                                    </div>
+                                                    <div class="CodeMirror-scrollbar-filler" cm-not-content="true"
+                                                        style="display: block; height: 10px; width: 10px;"></div>
+                                                    <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                                                    <div class="CodeMirror-scroll" tabindex="-1">
+                                                        <div class="CodeMirror-sizer"
+                                                            style="margin-left: 40px; margin-bottom: -10px; border-right-width: 40px; min-height: 463px; min-width: 753.9px; padding-right: 10px; padding-bottom: 10px;">
+                                                            <div style="position: relative; top: 0px;">
+                                                                <div class="CodeMirror-lines" role="presentation">
+                                                                    <div role="presentation"
+                                                                        style="position: relative; outline: none;">
+                                                                        <div class="CodeMirror-measure">
+                                                                            <pre
+                                                                                class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre>
+                                                                        </div>
+                                                                        <div class="CodeMirror-measure">
+                                                                            <pre class="CodeMirror-line"
+                                                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"Huffingquane-McGafferty George"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"George Huffingquane-McGafferty"</span>))</span></pre>
+                                                                        </div>
+                                                                        <div style="position: relative; z-index: 1;">
+                                                                        </div>
+                                                                        <div class="CodeMirror-cursors">
+                                                                            <div class="CodeMirror-cursor"
+                                                                                style="left: 4px; top: 0px; height: 17.5px;">
+                                                                                &nbsp;</div>
+                                                                        </div>
+                                                                        <div class="CodeMirror-code" role="presentation"
+                                                                            style="">
+                                                                            <div class="CodeMirror-activeline"
+                                                                                style="position: relative;">
+                                                                                <div
+                                                                                    class="CodeMirror-activeline-background CodeMirror-linebackground">
+                                                                                </div>
+                                                                                <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter"
+                                                                                    style="left: -40px; width: 40px;">
+                                                                                </div>
+                                                                                <div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        1</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">local</span> <span class="cm-variable">solution</span> = <span class="cm-builtin">require</span> <span class="cm-string">'solution'</span></span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        2</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        3</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">describe</span>(<span class="cm-string">"Sample tests"</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        4</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"john McClane\" = \"McClane john\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        5</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"McClane john"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"john McClane"</span>))</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        6</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-keyword">end</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        7</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"Mary jeggins\" = \"jeggins Mary\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        8</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"jeggins Mary"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"Mary jeggins"</span>))</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        9</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-keyword">end</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        10</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"tom jerry\" = \"jerry tom\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        11</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"jerry tom"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"tom jerry"</span>))</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        12</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-keyword">end</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        13</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"Mary Jane\" = \"Jane Mary\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        14</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"Jane Mary"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"Mary Jane"</span>))</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        15</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-keyword">end</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        16</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"John Doe\" = \"Doe John\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        17</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">assert.are.same</span>(<span class="cm-string">"Doe John"</span>, <span class="cm-variable">solution</span>(<span class="cm-string">"John Doe"</span>))</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        18</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-keyword">end</span>)</span></pre>
+                                                                            </div>
+                                                                            <div style="position: relative;">
+                                                                                <div class="CodeMirror-gutter-wrapper"
+                                                                                    aria-hidden="true"
+                                                                                    style="left: -40px;">
+                                                                                    <div class="CodeMirror-linenumber CodeMirror-gutter-elt"
+                                                                                        style="left: 0px; width: 21px;">
+                                                                                        19</div>
+                                                                                </div>
+                                                                                <pre class=" CodeMirror-line "
+                                                                                    role="presentation"><span role="presentation" style="padding-right: 0.1px;">  <span class="cm-variable">it</span>(<span class="cm-string">"\"William O\'Brien\" = \"O\'Brien William\""</span>, <span class="cm-keyword">function</span>()</span></pre>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            style="position: absolute; height: 40px; width: 1px; border-bottom: 10px solid transparent; top: 463px;">
+                                                        </div>
+                                                        <div class="CodeMirror-gutters"
+                                                            style="height: 513px; left: 0px;">
+                                                            <div class="CodeMirror-gutter CodeMirror-linenumbers"
+                                                                style="width: 29px;"></div>
+                                                            <div class="CodeMirror-gutter CodeMirror-foldgutter"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="editor-msg-container is-hidden">
+                                                    <div class="alert-box"></div>
+                                                </div>
+                                            </div>
+                                            <div class="commands-container">
+                                                <ul class="is-unstyled">
+                                                    <li><a id="fixture_help"><i
+                                                                class="icon-moon-help is-normal"></i></a></li>
+                                                    <li class="expand" title="Maximize Editor (esc key)"><a><i
+                                                                class="icon-moon-expand "></i></a></li>
+                                                    <li class="shrink is-hidden" title="Shrink Editor (esc key)"><a><i
+                                                                class="icon-moon-collapse "></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full mt-4 flex flex-row flex-nowrap items-center justify-between">
+                                    <div class="flex flex-row flex-nowrap">
+                                        <a class="btn is-dark no-border whitespace-nowrap"
+                                            data-tippy-content="Skip this kata" data-tippy-placement="top"
+                                            id="skip_btn">
+                                            <i class="icon-moon-next m-0"></i>
+                                            <span class="ml-2 hidden lg:inline">Skip</span>
+                                        </a>
+                                        <a id="surrender_btn"
+                                            class="btn is-dark no-border ml-1 text-center whitespace-nowrap"
+                                            data-tippy-content="Forfeit and unlock solutions"
+                                            data-tippy-placement="top">
+                                            <i class="icon-moon-unlock m-0"></i>
+                                            <span class="ml-2 hidden lg:inline">Unlock Solutions</span>
+                                        </a>
+                                        <a class="btn is-dark no-border ml-1 text-center whitespace-nowrap"
+                                            data-tippy-content="View comments, suggestions and issues"
+                                            data-tippy-placement="top" href="/kata/559ac78160f0be07c200005a/discuss">
+                                            <i class="icon-moon-comments m-0"></i>
+                                            <span class="ml-2 hidden lg:inline">
+                                                Discuss (27)
+                                            </span>
+                                        </a>
+                                        <a id="reset_btn" class="btn is-dark no-border whitespace-nowrap ml-1"
+                                            data-tippy-content="Reset to the initial state" data-tippy-placement="top">
+                                            Reset
+                                        </a>
+                                    </div>
+                                    <div class="flex flex-row flex-nowrap justify-end">
+                                        <a id="validate_btn" class="btn js-run is-dark whitespace-nowrap lg:w-20"
+                                            data-tippy-content="Test against the sample tests (Cmd/Ctrl + ')"
+                                            data-tippy-placement="top-start">
+                                            Test
+                                        </a>
+                                        <a id="attempt_btn" class="btn js-run ml-1 whitespace-nowrap lg:w-20"
+                                            data-tippy-content="Attempt to pass the full test suite (Cmd/Ctrl + Enter)"
+                                            data-tippy-placement="top-start">
+                                            Attempt
+                                        </a>
+                                        <a id="submit_btn" class="btn is-hidden is-green ml-1 whitespace-nowrap lg:w-20"
+                                            data-tippy-content="Submit your solution and view solutions (Cmd/Ctrl + Enter)"
+                                            data-tippy-placement="top-start">
+                                            Submit
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="modal" id="confirm_modal" style="display: none">
+            <div class="modal-header">
+                <div class="close" data-dismiss="modal"><i class="icon-moon-x"></i></div>
+                <h4>Confirm</h4>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-body view"></div>
+            <div class="modal-footer">
+                <ul class="form-actions">
+                    <li class="cancel" data-dismiss="modal"><a class="btn">Cancel</a></li>
+                    <li class="alt-confirm is-hidden"><a class="btn"></a></li>
+                    <li class="confirm"><a class="btn is-green"><i class="icon-general-checkmark"></i>Confirm</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="is-hidden" data-turbolinks-permanent="" id="template_helpers">
+        <script id="hidden_field"
+            type="template"><input data-bind-id="@id" data-bind-name="@name" data-bind-value="@value" type="hidden" /></script>
+        <script id="input_field"
+            type="template"><div data-bind-class="field_class"><label data-bind-class="%required &amp;&amp; &#39;required&#39;" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><div data-bind-class="field_value_class"><input data-bind-id="@id" data-bind-name="@name" data-bind-type="%type || &#39;text&#39;" data-bind-value="@value | unescape_html || %defaultValue" /></div><include data-bind-each="@errors"><small data-bind-html="@"></small></include></div></script>
+        <script id="checkbox_field"
+            type="template"><div class="boolean" data-bind-class="field_class"><div class="field_value"><div><input data-bind-name="@name" type="hidden" value="false" /><label class="checkbox"><input class="form-checkbox rounded bg-gray-400 dark:bg-gray-600 border-transparent focus:border-transparent focus:bg-gray-400 text-gray-700 focus:ring-1 focus:ring-offset-2 dark:ring-offset-1 focus:ring-gray-500 dark:focus:ring-gray-700 dark:focus:ring-offset-gray-800 boolean" data-bind-checked="@value" data-bind-id="@id" data-bind-name="@name" type="checkbox" value="true" /><span data-bind-html="%label || @label"></span></label></div></div></div></script>
+        <script id="markdown_field"
+            type="template"><div class="is-full-height" data-bind-class="field_class" data-bind-if="%style | eq::&#39;full&#39;"><div class="markdown-editor is-full-height mb-0"><div class="tabs is-full-height"><dl class="tabs"><dd class="is-active" data-tippy-content="Edit your message using markdown" data-tippy-placement="top"><a data-bind-html="{{%label}}" data-bind-if="%label" data-tab="markdown"></a><a data-bind-unless="%label" data-tab="markdown"><i class="icon-moon-edit "></i></a></dd><dd data-tippy-content="Preview your comment" data-tippy-placement="right"><a data-tab="preview"><i class="icon-moon-preview "></i></a></dd><dd data-tippy-content="Edit in full-screen mode" data-tippy-placement="left"><a class="js-expand"><i class="icon-moon-expand "></i></a></dd></dl><div class="clearfix"></div><ul class="tabs-content is-full-height"><li class="is-full-height is-active" data-tab="markdown"><div class="text-editor-container is-full-height"><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></li><li class="is-full-height" data-tab="preview"><div class="panel bg-ui-section is-overflow-auto"><div class="markdown prose max-w-none"><p>Your rendered <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener">github-flavored</a> markdown will appear here.</p></div></div></li></ul></div></div></div><div data-bind-class="field_class" data-bind-if="%style | ne::&#39;full&#39;"><label data-bind-class="%required &amp;&amp; &#39;required&#39;" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><div class="markdown-editor is-tall" data-bind-class="%markdownEditorClass"><div class="tabs"><dl class="tabs"><dd class="is-active" data-tippy-content="Edit your message using markdown" data-tippy-placement="top"><a data-tab="markdown"><i class="icon-moon-edit "></i></a></dd><dd data-tippy-content="Preview your comment" data-tippy-placement="right"><a data-tab="preview"><i class="icon-moon-preview "></i></a></dd><dd data-tippy-content="Edit in full-screen mode" data-tippy-placement="right"><a class="js-expand"><i class="icon-moon-expand "></i></a></dd></dl><ul class="tabs-content"><li class="is-full-height is-active" data-tab="markdown"><div class="text-editor-container is-full-height"><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></li><li class="is-full-height" data-tab="preview"><div class="panel bg-ui-section is-overflow-auto"><div class="markdown prose max-w-none"><p>Your rendered <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener">github-flavored</a> markdown will appear here.</p></div></div></li></ul></div></div></div></script>
+        <script id="code_editor_field"
+            type="template"><div class="text-editor-container" data-bind-class="field_class" data-bind-id="{{@id}}_field"><label data-bind-class="%required &amp;&amp; &#39;required&#39;" data-bind-for="@id" data-bind-if="%label"><abbr data-bind-if="%required" title="required">* </abbr><span data-bind-html="%label"></span></label><textarea class="is-hidden" data-bind-id="@id" data-bind-name="@name" data-bind-value="@value"></textarea><div class="text-editor js-editor has-shadow"></div><div class="commands-container"><ul class="is-unstyled"><li class="expand" title="Maximize Editor (esc key)"><a><i class="icon-moon-expand "></i></a></li><li class="shrink is-hidden" title="Shrink Editor (esc key)"><a><i class="icon-moon-collapse "></i></a></li></ul></div><div class="editor-msg-container is-hidden"><div class="alert-box"></div></div></div></script>
+    </div>
+    <div id="collection_modal" class="p-4 is-hidden" data-turbolinks-permanent="true" style="display: none;">
+        <div id="collection-modal-view">
+            <h3 class="mx-2 mt-2 mb-5 text-base font-bold">
+                Collect: <span>undefined</span>
+            </h3>
+            <div class="pl-2">
+                <p>Loading collection data...</p>
+            </div>
+
+        </div>
+    </div>
+    <script>document.addEventListener("turbolinks:load", (event) => {
+            const currentUser = JSON.parse("{\"username\":\"manoger\",\"email\":\"germanosp11@hotmail.com\",\"role\":\"standard\",\"guest\":false,\"honor\":65,\"rank\":-7,\"bootcamp_interest\":\"not_interested\",\"career_paths\":[],\"experience_years\":null,\"andela_interest\":null,\"phone\":null,\"current_language\":\"lua\",\"country_name\":\"Brazil\",\"blocked_user_ids\":[],\"blocked_by_user_ids\":[],\"jwt\":\"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYzM2RjMGNiNzg0NWYyMDA0ZjZlMGM0ZiIsImV4cCI6MTY4ODc4NjE4NH0.2_-7PgGrUbe37_N73wx8BFkFllDm64C4hoZ6jmCgQw0\",\"experience\":\"mid\",\"subscriber\":false,\"hideAds\":false,\"id\":\"633dc0cb7845f2004f6e0c4f\",\"starred_code_challenge_ids\":[],\"can_resolve_comments\":false,\"can_report_comments\":true,\"avatar_tag\":\"\\u003cimg title=\\\"manoger\\\" data-tippy-content=\\\"manoger\\\" data-tippy-placement=\\\"bottom\\\" alt=\\\"manoger Avatar\\\" src=\\\"https://avatars.githubusercontent.com/u/29717626?s=100\\\" /\\u003e\",\"braze\":{\"url\":\"https://sdk.iad-05.braze.com\",\"key\":\"c55a488b-8647-4a10-baf6-ad1b7a81985a\",\"jwt\":\"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzNkYzBjYjc4NDVmMjAwNGY2ZTBjNGYiLCJleHAiOjE2ODg3ODYxODR9.dp7J65sBZmOwznLzPIrMcdCUGjZe2v8xn2A5bAEUmWYQGgWsZklcx7eXv4abZXunzELnUvd116wvtBzYkjG7FhS_lm5h91OXNEutAcdItdbeu1RS6kelHAPF2FkgGapL9fwi-wXVbIY8WyAclSWG1rMfVaYvpI18cc8m7bPrKLV7u4pYIk8y1dteYQ-S2RhlbgXUk-M9szaZJ60BBAV5V5T-CD7YT00DkV69URC2cUrruGp5Py8WanLxOpIsoIfHLezYd3YGe_va3GAtDlUEnCMaqGX8ccQX-85AFAwLUPmx70kqIaL14N2X6-QRyjilrLXG-0XAOi3kQxWPELRE_A\"}}");
+            if (typeof gtag === "function" && event.data.url) {
+                const url = new URL(event.data.url);
+                // Clear query params for these paths
+                if (["/users/password/edit", "/users/confirmation"].includes(url.pathname)) url.search = "";
+                const config = {
+                    page_location: url.toString(),
+                    page_title: event.target.title,
+                };
+                if (!currentUser.guest && currentUser.id) config.user_id = currentUser.id;
+                gtag("config", "G-M3JYSQLS8M", config);
+                if (!currentUser.guest && currentUser.experience) {
+                    gtag("set", "user_properties", {
+                        career_level: currentUser.experience,
+                        rank: currentUser.rank,
+                        bootcamp_interest: currentUser.bootcamp_interest || "unknown",
+                    });
+                }
+            }
+            App.setup({
+                env: "production",
+                currentUser,
+                data: JSON.parse("{\"routes\":{},\"controllerName\":\"code_challenges\",\"id\":\"559ac78160f0be07c200005a\",\"challengeName\":\"Name Shuffler\",\"authorUsername\":\"debri\",\"now\":\"2023-06-28T03:16:24.741Z\",\"activeLanguage\":\"lua\",\"description\":\"Write a function that returns a string in which firstname is swapped with last name.\\n\\n**Example(Input --\\u003e Output)**\\n\\n```\\n\\\"john McClane\\\" --\\u003e \\\"McClane john\\\"\\n```\\n\\n~~~if:riscv\\nRISC-V: The function signature is:\\n\\n```c\\nchar *name_shuffler(char *shuffled, const char *name);\\n```\\n\\n`name` is the input string and `shuffled` is the output buffer you should write to. You may assume the output buffer is large enough to hold the result. Return the output buffer.\\n~~~\\n\",\"category\":\"reference\",\"published\":true,\"retired\":false,\"previousSolutions\":null,\"completedKata\":false,\"progress\":{\"any\":null}}"),
+                routes: { "user_profile": "/users/manoger", "user_stars": "/user/stars", "star_code_challenge": "/users/stars/%7Bid%7D", "mark_notifications_read": "/users/notifications/mark_read", "unread_popup_notifications": "/users/notifications/unread_popups", "collections": "/api/v1/collections", "collection_code_challenge": "/api/v1/collections/%7BcollectionId%7D/code_challenges/%7Bid%7D", "session": "/kata/projects/649ba60827e21544b2e23a72/%7Blanguage%7D/session", "notify": "/api/v1/code-challenges/projects/649ba60827e21544b2e23a72/solutions/%7BsolutionId%7D/notify", "finalize": "/api/v1/code-challenges/projects/649ba60827e21544b2e23a72/solutions/%7BsolutionId%7D/finalize", "skip": "/kata/projects/649ba60827e21544b2e23a72/skip", "report": "/kata/559ac78160f0be07c200005a", "comments": "/kata/559ac78160f0be07c200005a/discuss/lua", "solutions": "/kata/559ac78160f0be07c200005a/solutions/%7Blanguage%7D", "editor": "/kata/559ac78160f0be07c200005a/edit/%7Blanguage%7D", "forfeit": "/kata/559ac78160f0be07c200005a/solutions?show-solutions=1" },
+                pageControllerName: 'CodeChallenges.PlayController',
+            });
+        }, { once: true });</script>
+    <script>document.addEventListener("turbolinks:load", (event) => {
+            if (typeof Intercom === "function" && Intercom.booted) Intercom("shutdown");
+        }, { once: true });</script><iframe id="intercom-frame"
+        style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important; pointer-events: none;"
+        aria-hidden="true" tabindex="-1" title="Intercom"></iframe>
+</body>
+
+</html>

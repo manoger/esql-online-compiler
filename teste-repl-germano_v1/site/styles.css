@@ -1,35 +1,61 @@
+:root {
+  --initial-red: 244;
+  --initial-green: 244;
+  --initial-blue: 244;
+  --initial-color: rgb(--initial-red,--initial-green,--initial-green);
+  --shadow-color-dark: rgb(
+    calc(156 + var(--initial-red)),
+    calc(156 + var(--initial-green)),
+    calc(156 + var(--initial-blue))
+  );
+  --shadow-color-light: rgb(
+    calc(156 - var(--initial-red)),
+    calc(156 - var(--initial-green)),
+    calc(156 - var(--initial-blue))
+  );
+}
 
 body {
-    /*background: linear-gradient(to bottom right, red, yellow, blue);*/
-    /*background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255), rgb(134, 134, 134));*/
-    background: #e0e0e0;    
-    background-size: 400% 400%;
-    /*animation: gradientAnimation 10s ease infinite;*/
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+  /*background: linear-gradient(to bottom right, red, yellow, blue);*/
+  /*background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255), rgb(134, 134, 134));*/
+  --secondary-color: #e0e0e0;
+  background: var(--secondary-color);
+  background-size: 400% 400%;
+  /*animation: gradientAnimation 10s ease infinite;*/
+  font-family: Arial, sans-serif;
+  font-size: 16px;
 }
+
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%;}
-    100% { background-position: 0% 50%;}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .stylized-box {
-    border-radius: 24px;
-    background: #dbdbdb;
-    box-shadow:  20px 20px 60px #bababa,
-                 -20px -20px 60px #fcfcfc;
+  border-radius: 24px;
+  background: var(--initial-color);
+  box-shadow:
+    20px 20px 60px var(--shadow-color-dark),
+    -20px -20px 60px var(--shadow-color-light);
 }
-
 
 /*****************************************************************************************************/
+
 .image-container {
-    background-image: url("lain-smiling2.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    /*transition: background-image 0.2s ease;*/
+  background-image: url("lain-smiling2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /*transition: background-image 0.2s ease;*/
 }
+
 .image-container:hover {
-    background-image: url("lain-smirking.png");
+  background-image: url("lain-smirking.png");
 }
 /*****************************************************************************************************/
