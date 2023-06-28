@@ -26,16 +26,15 @@
 
 <body>
 
-
+    <section class="horizontal-items">
+        <div class="stylized-card horizontal-items">
+            <div id="anime-character" class="image-container"></div>
+            <textarea id="dialog-box" class="feedback">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </textarea>
+        </div>
+    </section>
     <div class="stylized-box">
-        <section class="horizontal-items">
-            <div class="stylized-card horizontal-items">
-                <div id="anime-character" class="image-container"></div>
-                <textarea id="dialog-box" class="feedback">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </textarea>
-            </div>
-        </section>
         <section class="horizontal-items">
             <section class="vertical-items ">
                 <h1>ENTRADA JSON</h1>
@@ -62,23 +61,24 @@ END MODULE;
                     <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
                 </section>
                 <h2>Conexão</h2>
-                <div id="compile-log" class="">
-                    <div class="compile-log success-compile-log"> Clique no botão "Compilar"</div>
-                    <div class="compile-log error-compile-log"> Mas certifique-se de ter subido o servidor 😉 </div>
+                <div id="compile-log-container" class="">
+                    <div class="compile-log-element success-compile-log"> Clique no botão "Compilar"</div>
+                    <div class="compile-log-element error-compile-log"> Mas certifique-se de ter subido o servidor 😉 </div>
                 </div>
             </section>
             <section class="vertical-items ">
                 <h1>SAIDA JSON</h1>
                 <textarea id="outputJsonTextArea" class="json" disabled>{"key": "valueY"}</textarea>
                 <div id="httpStatusCode">Status code: ___</div>
-                <h2>Conexão</h2>
-                <div id="compile-log" class="stylized-box">
-                    <div class="compile-log success-compile-log"> Clique no botão "Compilar"</div>
-                    <div class="compile-log error-compile-log"> Mas certifique-se de ter subido o servidor 😉 </div>
+                <h2>Testes</h2>
+                <div id="compile-log-container" class="">
+                    <div class="compile-log-element success-compile-log"> Sucesso</div>
+                    <div class="compile-log-element error-compile-log"> Falha </div>
                 </div>
             </section>
         </section>
     </div>
+    <button class="bn5" onclick="expandESQL()">Expand</button><button class="bn5" onclick="minimizeESQL()">Minimize</button>
 
     <script>
         ////////////////////////////////////////////////////////////////////////////////////
@@ -129,12 +129,12 @@ END MODULE;
                 renderResponseLog(JSON.parse(result));
             };
             socket.onclose = function (event) {
-                document.getElementById('compile-log').innerHTML = "💻💤 O servidor provalvelmente esta desligado";
+                document.getElementById('compile-log-container').innerHTML = "💻💤 O servidor provalvelmente esta desligado";
                 console.log("Conexão fechada com código: " + event.code);
                 document.getElementById("connectbtn").style.display = "flex";
             };
             socket.onerror = function (error) {
-                document.getElementById('compile-log').innerHTML = "💻🔥 A conexão do servidor caiu";
+                document.getElementById('compile-log-container').innerHTML = "💻🔥 A conexão do servidor caiu";
                 console.error("Erro na conexão: " + error);
                 document.getElementById("connectbtn").style.display = "flex";
             };
@@ -143,7 +143,7 @@ END MODULE;
             var esqlCode = esqlTextArea.getValue();
             console.log("😉📤Enviando ESQL", esqlCode)
             socket.send(esqlCode);
-            const responseLogDiv = document.getElementById('compile-log');
+            const responseLogDiv = document.getElementById('compile-log-container');
             //"Compilando ESQL: ..."
             responseLogDiv.innerHTML =
                 `<svg class="pl" width="240" height="240" viewBox="0 0 240 240">
@@ -175,13 +175,19 @@ END MODULE;
                     outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possivel que haja erros de escrita de código`);
                 });
         }
+        function expandESQL(){
+            esqlTextArea.setSize("100vw", '80vh');
+        }
+        function minimizeESQL(){
+            esqlTextArea.setSize("40vw", '80vh');
+        }
         ////////////////////////////////////////////////////////////////////////////////////
         function renderResponseLog(response) {
-            const responseLogDiv = document.getElementById('compile-log');
+            const responseLogDiv = document.getElementById('compile-log-container');
             responseLogDiv.innerHTML = '';
             response.LogEntry.forEach(logEntry => {
                 const logEntryDiv = document.createElement('div');
-                logEntryDiv.className = 'compile-log';
+                logEntryDiv.className = 'compile-log-element';
                 logEntryDiv.classList.add(logEntry.message.severityCode === 'E' ? 'error-compile-log' : 'success-compile-log');
 
                 const messageDiv = document.createElement('div');

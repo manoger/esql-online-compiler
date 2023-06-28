@@ -1,31 +1,49 @@
-#compile-log {
+#compile-log-container {/*container*/
+    color:white;
     max-height: 150px;
-    max-width: 40vw;
+    max-width: 30vw;
+    padding: 50px;
     overflow-y: scroll;
 
-    .compile-log {
-        margin-bottom: 5px;
+    .compile-log-element {/*elements*/
+        margin-bottom: 10px;
         padding: 10px;
         transition: border-color 0.3s;
+
         &.error-compile-log {
-            border-color: #ff0000;
-            border-width: 1px 1px 1px 10px;
-            border-top-style: dashed;
-            border-right-style: dotted;
-            border-bottom-style: dashed;
-            border-left-style: solid;
+            border-radius: 13px;
+            background: linear-gradient(145deg, #bd1d1d, #9f1818);
+            box-shadow:  5px 5px 10px #5c0e0e,
+             -5px -5px 10px #ff2828;
         }
+
+        &.error-compile-log:hover {
+            border-radius: 13px;
+            background: linear-gradient(145deg, #9f1818, #bd1d1d);
+            box-shadow:  5px 5px 10px #5c0e0e,
+             -5px -5px 10px #ff2828;
+        }
+
         &.success-compile-log {
-            border-color: #57f52f;
-            border-width: 1px 1px 1px 10px;
-            border-top-style: dashed;
-            border-right-style: dotted;
-            border-bottom-style: dashed;
-            border-left-style: solid;
+            border-radius: 13px;
+            background: linear-gradient(145deg, #38bd1d, #2f9f18);
+            box-shadow: 5px 5px 10px #1b5c0e,
+            -5px -5px 10px #4dff28;
         }
+
+        &.success-compile-log:hover {
+            &.success-compile-log {
+                border-radius: 13px;
+                background: linear-gradient(145deg, #2f9f18, #38bd1d);
+                box-shadow: 5px 5px 10px #1b5c0e,
+            -5px -5px 10px #4dff28;
+            }
+        }
+
         .message {
             font-weight: bold;
         }
+
         .text,
         .detailed-text {
             margin-top: 5px;
