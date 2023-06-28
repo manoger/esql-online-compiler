@@ -1,5 +1,6 @@
 #compile-log {
     max-height: 150px;
+    max-width: 40vw;
     overflow-y: scroll;
 
     .compile-log {

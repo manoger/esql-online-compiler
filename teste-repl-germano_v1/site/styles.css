@@ -2,7 +2,7 @@
 body {
     /*background: linear-gradient(to bottom right, red, yellow, blue);*/
     /*background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(255, 255, 255), rgb(134, 134, 134));*/
-    background: #e0e0e0;
+    background: #e0e0e0;    
     background-size: 400% 400%;
     /*animation: gradientAnimation 10s ease infinite;*/
     font-family: Arial, sans-serif;
@@ -15,26 +15,21 @@ body {
 }
 
 .stylized-box {
-    color: rgb(25, 23, 20);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    background-color: #1a1a1a;
-    border-style: solid;
-    border-color: black;
-    border-width: 4px 10px 8px 4px;
-    /* superior, direito, inferior, esquerdo */
+    border-radius: 24px;
+    background: #dbdbdb;
+    box-shadow:  20px 20px 60px #bababa,
+                 -20px -20px 60px #fcfcfc;
 }
 
 
 /*****************************************************************************************************/
 .image-container {
-    background-image: url("https://i.pinimg.com/originals/3f/cf/47/3fcf47923a19766bc82bddb570b0f869.png");
-    background-size: 150px 150px;
+    background-image: url("lain-smiling2.png");
+    background-size: 100%;
     background-repeat: no-repeat;
-    transition: background-image 0.2s ease;
+    /*transition: background-image 0.2s ease;*/
 }
 .image-container:hover {
-    background-image: url("https://th.bing.com/th/id/R.5f55d248bcb24aded25f41e4fec6caec?rik=pW6aJ1VsTqSU%2fA&riu=http%3a%2f%2fimage.noelshack.com%2ffichiers%2f2017%2f20%2f1495400569-sans-titre-28.png&ehk=lNEcJ3dc2rewT4%2bD5yNizM5IY2iQBJlFryRFCBqoqyA%3d&risl=&pid=ImgRaw&r=0");
+    background-image: url("lain-smirking.png");
 }
 /*****************************************************************************************************/

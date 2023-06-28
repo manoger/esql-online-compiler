@@ -1,7 +1,12 @@
 CREATE COMPUTE MODULE main_msgflow_Compute
     CREATE FUNCTION Main() RETURNS BOOLEAN
-	BEGIN
-    	SET OutputRoot.JSON.Data.A = CAST(CAST(InputRoot.JSON.Data.data.lancamentos.Item[1].dataLancamento AS TIMESTAMP FORMAT 'yyyy-MM-dd') AS CHAR FORMAT 'dd/MM/yyyy');
-	END;
-	
+    BEGIN
+        CALL CopyEntireMessage();
+        RETURN TRUE;
+    END;
+    
+    CREATE PROCEDURE CopyEntireMessage() BEGIN
+        SET OutputRoot = InputRoot;
+    END;
 END MODULE;
+                
