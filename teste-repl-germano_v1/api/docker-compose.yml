@@ -1,0 +1,22 @@
+version: '3'
+services:
+  aceserver:
+    image: ibmcom/ace:latest
+    container_name: aceserver
+    ports:
+      - 7600:7600
+      - 7800:7800
+      - 7843:7843
+    environment:
+      LICENSE: accept
+      ACE_SERVER_NAME: ACESERVER #mudar para SERVIDOR_APP_CONNECT_ENTERPRISE
+      ACE_ENABLE_METRICS: "true"
+      LOG_FORMAT: json
+      TZ: America/Sao_Paulo
+      MQSI_JSON_NUMBER_PRECISION_TYPE: DECIMAL
+      LANG: C.utf8
+      MQSI_FILENODES_MAXIMUM_RECORD_LENGTH: 524288000
+    volumes:
+      - "./initial-config:/home/aceuser/initial-config"
+
+      

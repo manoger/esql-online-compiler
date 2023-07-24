@@ -1,0 +1,26 @@
+Defaults:
+  #defaultApplication: ''            # Name a default application under which independent resources will be placed
+  policyProject: 'DefaultPolicies' # Name of the Policy project that will be used for unqualified Policy references, default is 'DefaultPolicies'
+
+ResourceManagers:
+  JVM:
+    #jvmVerboseOption: 'none'
+    #jvmDisableClassGC: ''
+    #jvmEnableIncGC: ''
+    #jvmShareClasses: ''
+    #jvmNativeStackSize: -1
+    #jvmJavaOSStackSize: -1
+    jvmMinHeapSize: 33554432        # minimum JVM  heap size in bytes (32MB)
+    jvmMaxHeapSize: 2147483648       # maximum JVM heap size in bytes (256MB)
+    jvmDebugPort: 7891 # Set non-zero to activate JVM debug port for Toolkit debugging
+    jvmSystemProperty: '-Dmail.smtp.starttls.enable=true -Dmail.smtp.auth.enable=true'
+    keystoreType: 'JKS' # JVM key store type
+    keystoreFile: '/home/aceuser/initial-config/serverconf/cacerts' # JVM location of the key store
+    keystorePass: 'changeit' # JVM resource alias containing the key store password
+    truststoreType: 'JKS' # JVM trust store type
+    truststoreFile: '/home/aceuser/initial-config/serverconf/cacerts' # JVM location of the trust store
+    truststorePass: 'changeit' # JVM resource alias containing the trust store password
+    #crlFileList: ''
+    #enableCRLDP: ''
+    #kerberosConfigFile: ''
+    #kerberosKeytabFile: ''

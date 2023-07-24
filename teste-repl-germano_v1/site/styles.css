@@ -39,13 +39,17 @@ body {
 }
 
 .stylized-box {
-  border-radius: 24px;
-  background: var(--initial-color);
-  box-shadow:
-    20px 20px 60px var(--shadow-color-dark),
-    -20px -20px 60px var(--shadow-color-light);
+  border-radius: 16px;
+background: #e0e0e0;
+box-shadow:  7px 7px 14px #bebebe,
+             -7px -7px 14px #ffffff;
 }
-
+.stylized-box2{
+  border-radius: 16px;
+background: #e0e0e0;
+box-shadow: inset 7px 7px 14px #bebebe,
+            inset -7px -7px 14px #ffffff;
+}
 /*****************************************************************************************************/
 
 .image-container {

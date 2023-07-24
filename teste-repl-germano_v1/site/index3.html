@@ -42,7 +42,7 @@
             <section class="vertical-items ">
                 <h1>ENTRADA JSON</h1>
                 <textarea id="inputJsonTextArea" class="json">{"key": "valueX"}</textarea>
-                <button id="connectbtn" class="bn5" onclick="openWebSocket()">Conectar Servidor</button>
+                <button id="connectbtn" class="bn5" onclick="startDocker()">Conectar Servidor</button>
                 <!--License: MIT. Made by ShopWare: https://github.com/shopware/meteor-icon-kit-->
                 <svg width="50px" height="50px" viewBox="0 0 20 20" id="meteor-icon-kit__solid-server" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M3 14H17C18.6569 14 20 15.3431 20 17C20 18.6569 18.6569 20 17 20H3C1.34315 20 0 18.6569 0 17C0 15.3431 1.34315 14 3 14zM3 16C2.44772 16 2 16.4477 2 17C2 17.5523 2.44772 18 3 18C3.55228 18 4 17.5523 4 17C4 16.4477 3.55228 16 3 16zM3 7H17C18.6569 7 20 8.3431 20 10C20 11.6569 18.6569 13 17 13H3C1.34315 13 0 11.6569 0 10C0 8.3431 1.34315 7 3 7zM3 9C2.44772 9 2 9.4477 2 10C2 10.5523 2.44772 11 3 11C3.55228 11 4 10.5523 4 10C4 9.4477 3.55228 9 3 9zM3 0H17C18.6569 0 20 1.34315 20 3C20 4.65685 18.6569 6 17 6H3C1.34315 6 0 4.65685 0 3C0 1.34315 1.34315 0 3 0zM3 2C2.44772 2 2 2.44772 2 3C2 3.55228 2.44772 4 3 4C3.55228 4 4 3.55228 4 3C4 2.44772 3.55228 2 3 2z" fill="red"/>
@@ -65,7 +65,7 @@ CREATE COMPUTE MODULE main_msgflow_Compute
 END MODULE;
                 </textarea>
                 <section class=" centered-spaced-items">
-                    <button class="bn5" onclick="compileESQl()">Compilar ESQL</button>
+                    <button class="bn5" onclick="writeAndZipBar()">Compilar ESQL</button>
                     <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
                 </section>
                 <h2>Conexão</h2>
@@ -132,31 +132,52 @@ END MODULE;
 
         async function startDocker() {
             try {
+                console.log('🐳🚿 startando docker...');
+                document.getElementById('meteor-icon-kit__solid-server').children[0].setAttribute("fill","yellow")
                 const response = await fetch(`${baseUrl}/api/start-docker`, {
-                method: 'POST',
+                    method: 'POST',
                 });
                 const data = await response.json();
-                console.log(data);
-                alert(data.message);
+                if(response.status==201){
+                    document.getElementById('meteor-icon-kit__solid-server').children[0].setAttribute("fill","green")
+                    document.getElementById('compile-log-container').innerHTML = `<div class="compile-log-element success-compile-log">✔ ${data.message}</div>`;
+                    console.log('🐳 docker startado');
+                }else{
+                    document.getElementById('meteor-icon-kit__solid-server').children[0].setAttribute("fill","red")
+                    document.getElementById('compile-log-container').innerHTML = `<div class="compile-log-element error-compile-log">❌ ${data.message}</div>`;
+                    console.log('🐳 docker com falha');
+                }
             } catch (error) {
-                console.error(error);
-                alert('Failed to start Docker Compose');
+                document.getElementById('meteor-icon-kit__solid-server').children[0].setAttribute("fill","red")
+                document.getElementById('compile-log-container').innerHTML = `<div class="compile-log-element error-compile-log">❌${error}</div>`;
+                console.error('🐋🔥 start do docker falhou '+error);
             }
         }
 
         async function writeAndZipBar() {
             try {
-                const message = 'Your plain text message here'; // Replace this with your input message
+                var esqlCode = esqlTextArea.getValue();
+                console.log("😉📤Enviando ESQL", esqlCode)
+                //"Compilando ESQL: ..."
+                const responseLogDiv = document.getElementById('compile-log-container');
+                responseLogDiv.innerHTML =
+                `<svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+                <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+                <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+                </svg>`;
                 const response = await fetch(`${baseUrl}/api/write-zip-bar`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'text/plain', // Send the input data as plain text
                 },
-                body: message,
+                body: esqlCode,
                 });
                 const data = await response.json();
                 console.log(data);
-                alert('API response: ' + JSON.stringify(data));
+                console.log("😎📥 ESQL recebido:", data)
+                renderResponseLog(data);
             } catch (error) {
                 console.error(error);
                 alert('Error writing and zipping .bar file');
@@ -212,17 +233,17 @@ END MODULE;
                 },
                 body: jsonData
             })
-                .then(function (response) {
-                    document.getElementById("httpStatusCode").innerText = `Status code: ${response.status}`;
-                    return response.json();
-                })
-                .then(function (data) {
-                    console.log('Resposta:', data);
-                    outputJsonTextArea.setValue(JSON.stringify(data, null, 2));
-                })
-                .catch(function (error) {
-                    outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possivel que haja erros de escrita de código`);
-                });
+            .then(function (response) {
+                document.getElementById("httpStatusCode").innerText = `Status code: ${response.status}`;
+                return response.json();
+            })
+            .then(function (data) {
+                console.log('Resposta:', data);
+                outputJsonTextArea.setValue(JSON.stringify(data, null, 2));
+            })
+            .catch(function (error) {
+                outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possivel que haja erros de escrita de código`);
+            });
         }
         function expandESQL(){
             esqlTextArea.setSize("90vw", '90vh');

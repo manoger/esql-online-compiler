@@ -1,3 +1,4 @@
+
 /* Estilos de Layout */
 .horizontal-items {
     display: flex;
@@ -35,9 +36,43 @@
     padding: 10px;
 }
 
+.stylized-box2{
+    width: 100%;
+}
 textarea {
     width: 100%;
     height: 100vh;
     resize: vertical;
     padding: 5px;
 }
+
+
+/***************************************************************/
+/* Style for the IntelliSense popup */
+.CodeMirror-hints {
+    position: absolute;
+    z-index: 10;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px;
+  }
+  
+  /* Style for individual hint items */
+  .CodeMirror-hints li {
+    list-style-type: none;
+    padding: 3px 8px;
+    cursor: pointer;
+  }
+  
+  /* Style for selected hint item */
+  .CodeMirror-hints li.CodeMirror-hint-active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  

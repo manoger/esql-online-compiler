@@ -1,0 +1,1 @@
+mqsisetdbparms -w /home/aceuser/ace-server -n odbc::MSSQLDB -u sa -p "yourStrong(!)Password"

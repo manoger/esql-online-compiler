@@ -1,0 +1,18 @@
+CREATE COMPUTE MODULE main_msgflow_Compute
+    CREATE FUNCTION Main() RETURNS BOOLEAN
+    BEGIN
+    	DECLARE idx INT 1;
+        CREATE FIELD OutputRoot.JSON.Data IDENTITY (JSON.Array)Data;
+        "p": WHILE idx < 50 DO
+        	FOR r AS InputRoot.JSON.Data.Item[] DO
+            	CREATE LASTCHILD OF OutputRoot.JSON.Data TYPE NameValue NAME 'Item' VALUE r;
+                IF r = 4 AND idx = 3 THEN
+                	LEAVE "p";
+                END IF;
+            END FOR;
+            SET idx = idx + 1;
+        END WHILE
+        "p";
+    END;
+END MODULE;
+                
