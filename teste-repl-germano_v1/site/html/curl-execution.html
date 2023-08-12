@@ -36,6 +36,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/addon/hint/sql-hint.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/addon/hint/show-hint.min.js"></script>
     <!--Codemirror scripts end-->
+    <script src="https://unpkg.com/htmx.org@1.9.4"
+    integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,8 +48,17 @@
         <textarea id="inputJsonTextArea" class="json">{"key": "valueX"}</textarea>
     </div>
     <center>
-        <button class="bn5">▶</button>
-        <button class="bn5">↩</button>  
+        <button class="bn5" 
+        hx-post="http://localhost:7800/esql-repl" 
+        hx-trigger="click"
+        hx-target="#outputJsonTextArea" 
+        hx-swap="innerHTML">
+            ▶
+        </button>
+        <a href="esql-code.html">
+            <button class="bn5" >↩</button>
+        </a>  
+        <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
     </center>
     <div>
         <h1>SAIDA JSON</h1>
@@ -74,6 +86,31 @@
         disabled: true,
     });
     outputJsonTextArea.setSize("60vh", "60vh");
+
+//TODO: DELETEME??
+function enviarJSON() {
+    var jsonData = inputJsonTextArea.getValue();
+    var url = 'http://localhost:7800/esql-repl';
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonData
+    })
+    .then(function (response) {
+        //document.getElementById("httpStatusCode").innerText = `Status code: ${response.status}`;//TODO: fazer alguma coisa
+        return response.text(); // Use response.text() instead of response.json()
+    })
+    .then(function (data) {
+        console.log('Resposta:', data);
+        outputJsonTextArea.setValue(data); // Display the cURL response "as is"
+    })
+    .catch(function (error) {
+        outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possível que haja erros de escrita de código`);
+    });
+}
+
 </script>
 
 </html>

@@ -242,22 +242,21 @@ END MODULE;
                 const logEntryDiv = document.createElement('div');
                 logEntryDiv.className = 'compile-log-element';
                 logEntryDiv.classList.add(logEntry.message.severityCode === 'E' ? 'error-compile-log' : 'success-compile-log');
-
+                //
                 const messageDiv = document.createElement('div');
                 messageDiv.className = 'message';
                 messageDiv.textContent = `Message: ${logEntry.message.number}`;
                 logEntryDiv.appendChild(messageDiv);
-
+                //
                 const textDiv = document.createElement('div');
                 textDiv.className = 'text';
                 textDiv.textContent = `Text: ${logEntry.text}`;
                 logEntryDiv.appendChild(textDiv);
-
+                //
                 const detailedTextDiv = document.createElement('div');
                 detailedTextDiv.className = 'detailed-text';
                 detailedTextDiv.textContent = `Detailed Text: ${logEntry.detailedText}`;
                 logEntryDiv.appendChild(detailedTextDiv);
-
                 responseLogDiv.appendChild(logEntryDiv);
             });
         }

@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESQL Compiler - Server Selection</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM Plex Sans">
     <style>
-        body { 
+        body {
             font-family: "IBM Plex Sans";
         }
+
         body {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-around;
         }
+
+        a, a:hover, a:focus, a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        a:hover {
+            cursor: pointer;
+        }
     </style>
     <link rel="stylesheet" href="../buttons.css">
     <link rel="stylesheet" href="../scrollbar.css">
+    <script src="https://unpkg.com/htmx.org@1.9.4"
+        integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <center>
-        <svg stroke-linejoin="miter" stroke-linecap="round" stroke-width="0.08" stroke="#E4C75D" fill="#FBF7E7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3" height="100px" width="100px"><path d="M0.251 0.124h2.497a0.001 0.001 0 0 1 0.003 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.253A0.001 0.001 0 0 1 0.251 0.749V0.126a0.001 0.001 0 0 1 0 -0.001z" rx="0.01" height="5" width="20" y="1" x="2"/><path d="M0.251 1h2.497a0.001 0.001 0 0 1 0.001 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.251a0.001 0.001 0 0 1 0 -0.003V1a0.001 0.001 0 0 1 0 0z" rx="0.01" height="5" width="20" y="8" x="2"/><path d="M0.251 1.876h2.497a0.001 0.001 0 0 1 0.001 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.251a0.001 0.001 0 0 1 0 -0.003v-0.623a0.001 0.001 0 0 1 0.001 -0.001z" rx="0.01" height="5" width="20" y="15" x="2"/>
-            <circle cx="2.3" cy=".45" r=".05" fill="#E4C75D" />
-            <circle cx="2.3" cy="1.35" r=".05" fill="#E4C75D" />
-            <circle cx="2.3" cy="2.25" r=".05" fill="#E4C75D" />
-          </svg>
+        <a hx-post="http://localhost:3000/api/start-docker" hx-trigger="click delay:500ms" hx-target="#status-circle"
+            hx-swap="outerHTML" hx-indicator="#status-circle">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg stroke-linejoin="miter" stroke-linecap="round" stroke-width="0.08" stroke="#E4C75D" fill="#FBF7E7"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3" height="100px" width="100px">
+                <path
+                    d="M0.251 0.124h2.497a0.001 0.001 0 0 1 0.003 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.253A0.001 0.001 0 0 1 0.251 0.749V0.126a0.001 0.001 0 0 1 0 -0.001z"
+                    rx="0.01" height="5" width="20" y="1" x="2" />
+                <path
+                    d="M0.251 1h2.497a0.001 0.001 0 0 1 0.001 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.251a0.001 0.001 0 0 1 0 -0.003V1a0.001 0.001 0 0 1 0 0z"
+                    rx="0.01" height="5" width="20" y="8" x="2" />
+                <path
+                    d="M0.251 1.876h2.497a0.001 0.001 0 0 1 0.001 0.001v0.623a0.001 0.001 0 0 1 -0.001 0.001H0.251a0.001 0.001 0 0 1 0 -0.003v-0.623a0.001 0.001 0 0 1 0.001 -0.001z"
+                    rx="0.01" height="5" width="20" y="15" x="2" />
+                <circle cx="2.3" cy=".45" r=".05" fill="#E4C75D" />
+                <circle cx="2.3" cy="1.35" r=".05" fill="#E4C75D" />
+                <circle cx="2.3" cy="2.25" r=".05" fill="#E4C75D" />
+            </svg>
+        </a>
+
         <?xml version="1.0" encoding="utf-8"?>
-        <svg id="status-circle"  width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="6" cy="6" r="6" fill="green"/>
+        <svg id="status-circle" class="htmx-indicator" width="10" height="10" viewBox="0 0 12 12"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="yellow" />
         </svg>
-        <h2>Integration Server</h2>
-        <?xml version="1.0" encoding="utf-8"?>
+
+        <a href="esql-code.html"><h2>Integration Server</h2></a>
+
     </center>
 </body>
+
 </html>

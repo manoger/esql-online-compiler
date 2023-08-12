@@ -8,5 +8,5 @@ CREATE COMPUTE MODULE main_msgflow_Compute
     CREATE PROCEDURE CopyEntireMessage() BEGIN
         SET OutputRoot = InputRoot;
     END;
-END MODULE;
+END MODULE; 
                 
