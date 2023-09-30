@@ -26,8 +26,9 @@ const buidDir = path.join(__dirname, 'BARfiles/buid');
 const buidBar = path.join(__dirname, 'BARfiles/buid.bar');
 const computeEsqlFile = path.join(__dirname, 'BARfiles/buid/esql-repl/main_msgflow_Compute.esql');
 
-// Function to zip a directory into a ZIP file
+
 function zipDirectory(sourceDir, targetZip) {
+  // Function to zip a directory into a ZIP file
   const zip = new AdmZip();
   zip.addLocalFolder(sourceDir);
   zip.writeZip(targetZip);
@@ -38,7 +39,6 @@ function getSVG_StatusCircle(color) {
   <circle cx="6" cy="6" r="6" fill="${color}"/>
   </svg>`;
 }
-
 function renderResponseLog(response) {
   let text = ``;
   response.LogEntry.forEach(logEntry => {
@@ -52,7 +52,7 @@ function renderResponseLog(response) {
 
   return text
 }
-
+//Express compatible functions
 const startDocker = (req, res) => {
   const dockerProcess = exec(dockerComposeCommand);
   dockerProcess.stdout.on('data', (data) => {
@@ -136,6 +136,22 @@ const writeZipBar = (req, res) => {
     });
   });
 }
+
+const getCurrentEsql = (req, res) => {
+  fs.readFile(computeEsqlFile, (err, data) => {
+    if (err) {
+      console.error(`Error reading .esql file: ${err.message}`);
+      res.status(422).json({ message: 'Error reading .esql file' });
+      return;
+    }
+    else{
+      res.status(200).send(
+        `${data}`
+        );
+      return;
+    }
+  });
+}
 /////////////////////////////////////////////////////////////
 /**
  * 
@@ -154,6 +170,8 @@ app.use(express.text());
 app.post('/api/start-docker', startDocker);
 // API endpoint to write and zip the ".bar" file
 app.post('/api/write-zip-bar', writeZipBar);
+// API endpoint to get current code
+app.get('/api/current-esql', getCurrentEsql);
 // Start the Express server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

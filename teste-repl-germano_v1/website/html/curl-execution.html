@@ -18,8 +18,8 @@
             justify-content: space-around;
         }
     </style>
-    <link rel="stylesheet" href="../buttons.css">
-    <link rel="stylesheet" href="../scrollbar.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
     <!--Codemirror styles start-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/theme/monokai.min.css">
@@ -37,33 +37,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/addon/hint/show-hint.min.js"></script>
     <!--Codemirror scripts end-->
     <script src="https://unpkg.com/htmx.org@1.9.4"
-    integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
-    crossorigin="anonymous"></script>
+        integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
-    
+
     <div>
-        <h1>ENTRADA JSON</h1>
+        <a href="esql-code.html">
+            <button class="bn5">↩</button>
+        </a>
+        <h1>INPUT</h1>
+        
         <textarea id="inputJsonTextArea" class="json">{"key": "valueX"}</textarea>
     </div>
-    <center>
-        <button class="bn5" 
-        hx-post="http://localhost:7800/esql-repl" 
-        hx-trigger="click"
-        hx-target="#outputJsonTextArea" 
-        hx-swap="innerHTML">
-            ▶
-        </button>
-        <a href="esql-code.html">
-            <button class="bn5" >↩</button>
-        </a>  
-        <button class="bn5" onclick="enviarJSON()">Enviar JSON</button>
-    </center>
     <div>
-        <h1>SAIDA JSON</h1>
+        <button class="bn5" onclick="enviarJSON()">▶</button><h1>OUTPUT</h1>
+        
         <textarea id="outputJsonTextArea" class="json" disabled>{"key": "valueY"}</textarea>
-    </div>  
+    </div>
 </body>
 <script>
     var inputJsonTextArea = CodeMirror.fromTextArea(
@@ -75,7 +67,7 @@
         autoCloseBrackets: true,
         extraKeys: { "Ctrl-Space": "autocomplete" }
     });
-    inputJsonTextArea.setSize("60vh", "60vh");
+    inputJsonTextArea.setSize("47vw", "60vh");
     var outputJsonTextArea = CodeMirror.fromTextArea(
         document.getElementById("outputJsonTextArea"), {
         mode: "application/json",
@@ -85,31 +77,31 @@
         autoCloseBrackets: true,
         disabled: true,
     });
-    outputJsonTextArea.setSize("60vh", "60vh");
+    outputJsonTextArea.setSize("47vw", "60vh");
 
-//TODO: DELETEME??
-function enviarJSON() {
-    var jsonData = inputJsonTextArea.getValue();
-    var url = 'http://localhost:7800/esql-repl';
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: jsonData
-    })
-    .then(function (response) {
-        //document.getElementById("httpStatusCode").innerText = `Status code: ${response.status}`;//TODO: fazer alguma coisa
-        return response.text(); // Use response.text() instead of response.json()
-    })
-    .then(function (data) {
-        console.log('Resposta:', data);
-        outputJsonTextArea.setValue(data); // Display the cURL response "as is"
-    })
-    .catch(function (error) {
-        outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possível que haja erros de escrita de código`);
-    });
-}
+    //TODO: DELETEME??
+    function enviarJSON() {
+        var jsonData = inputJsonTextArea.getValue();
+        var url = 'http://localhost:7800/esql-repl';
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: jsonData
+        })
+            .then(function (response) {
+                //document.getElementById("httpStatusCode").innerText = `Status code: ${response.status}`;//TODO: fazer alguma coisa
+                return response.text(); // Use response.text() instead of response.json()
+            })
+            .then(function (data) {
+                console.log('Resposta:', data);
+                outputJsonTextArea.setValue(data); // Display the cURL response "as is"
+            })
+            .catch(function (error) {
+                outputJsonTextArea.setValue(`Erro na solicitação: ${error} \n🧐 É possível que haja erros de escrita de código`);
+            });
+    }
 
 </script>
 
